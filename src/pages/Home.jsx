@@ -10,7 +10,11 @@ import LazyImage from "../components/ui/LazyImage";
 import { projetos } from "../data/projetos";
 import { SITE } from "../data/site";
 
-const DESTAQUES = projetos.slice(0, 8);
+const DESTAQUES = projetos.filter((p) => !p.destaque).slice(0, 8);
+
+const FOTOS_VITRINE = [1, 5, 10, 18, 28, 40].map(
+  (n) => `/projetos/melhores-trabalhos/thumb/${String(n).padStart(2, "0")}.webp`,
+);
 
 const SPANS = [
   "md:col-span-7",
@@ -88,6 +92,51 @@ export default function Home() {
                 eager
               />
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-ink px-6 py-20 md:px-10">
+        <div className="mx-auto max-w-7xl">
+          <Reveal className="mb-10 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <p className="mb-3 text-xs uppercase tracking-wides text-terracotta">
+                Galeria curada
+              </p>
+              <h2 className="font-display text-3xl text-cream md:text-4xl">
+                Melhores Trabalhos
+              </h2>
+              <p className="mt-3 max-w-xs text-sm text-cream/55">
+                Uma seleção das imagens mais marcantes do portfólio — produto, gastronomia e retratos com olhar editorial.
+              </p>
+            </div>
+            <Link
+              to="/portfolio/melhores-trabalhos"
+              className="inline-flex shrink-0 items-center gap-2 border border-cream/20 px-6 py-2.5 text-sm uppercase tracking-wides text-cream transition-colors duration-400 hover:border-terracotta hover:text-terracotta"
+            >
+              Ver galeria completa
+              <ArrowRight size={14} />
+            </Link>
+          </Reveal>
+
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
+            {FOTOS_VITRINE.map((src, i) => (
+              <Reveal key={src} delay={i * 0.04}>
+                <Link
+                  to="/portfolio/melhores-trabalhos"
+                  className="group block"
+                  tabIndex={-1}
+                  aria-hidden
+                >
+                  <LazyImage
+                    src={src}
+                    alt={`Melhores trabalhos — foto ${i + 1}`}
+                    aspect={i === 0 || i === 3 ? "aspect-[3/4]" : "aspect-[4/5]"}
+                    imgClassName="transition-transform duration-600 ease-out-soft group-hover:scale-[1.04]"
+                  />
+                </Link>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
