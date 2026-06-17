@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import SEO from "../components/ui/SEO";
 import Reveal from "../components/ui/Reveal";
+import LazyImage from "../components/ui/LazyImage";
 import { SITE } from "../data/site";
 
 const SERVICOS = [
@@ -39,11 +40,27 @@ export default function About() {
       <section className="px-6 pt-16 pb-20 md:px-10">
         <div className="mx-auto grid max-w-7xl items-start gap-14 md:grid-cols-2">
           <Reveal>
-            <div className="flex aspect-[4/5] flex-col items-center justify-center border border-ink/10 bg-terracotta/5 text-center">
-              <span className="font-display text-6xl text-terracotta">AD</span>
-              <span className="mt-4 px-8 text-xs uppercase tracking-wides text-graphite">
-                Foto de retrato — substituir por uma imagem real de Aiara
-              </span>
+            <div className="grid grid-cols-[3fr_2fr] gap-3">
+              <LazyImage
+                src="/sobre/01.webp"
+                alt="Aiara Diniz — fotógrafa e diretora criativa"
+                aspect="aspect-[2/3]"
+                eager
+              />
+              <div className="flex flex-col gap-3">
+                <LazyImage
+                  src="/sobre/02.webp"
+                  alt="Aiara Diniz em produção"
+                  aspect="aspect-[3/4]"
+                  eager
+                />
+                <LazyImage
+                  src="/sobre/03.webp"
+                  alt="Aiara Diniz — olhar editorial"
+                  aspect="aspect-[3/4]"
+                  eager
+                />
+              </div>
             </div>
           </Reveal>
 
