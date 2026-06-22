@@ -13,6 +13,10 @@ export function getProjetosVisiveis() {
   return projetos.filter((p) => !p.oculto && !p.destaque);
 }
 
+export function getProjetosNavegaveis() {
+  return projetos.filter((p) => !p.oculto);
+}
+
 export const projetos = [
   {
     id: 1,
@@ -294,13 +298,13 @@ export function getProjetosPorCategoria(categoriaSlug) {
 }
 
 export function getProjetoAdjacente(slug, direcao) {
-  const visiveis = getProjetosVisiveis();
-  const index = visiveis.findIndex((p) => p.slug === slug);
+  const lista = getProjetosNavegaveis();
+  const index = lista.findIndex((p) => p.slug === slug);
   if (index === -1) return null;
-  const total = visiveis.length;
+  const total = lista.length;
   const novoIndex =
     direcao === "proximo"
       ? (index + 1) % total
       : (index - 1 + total) % total;
-  return visiveis[novoIndex];
+  return lista[novoIndex];
 }

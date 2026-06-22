@@ -144,6 +144,7 @@ export default function ProjectDetail() {
         </div>
       </section>
 
+      {anterior && proximo && (
       <nav
         className="border-t border-ink/10 px-6 py-10 md:px-10"
         aria-label="Navegação entre projetos"
@@ -171,6 +172,7 @@ export default function ProjectDetail() {
           </Link>
         </div>
       </nav>
+      )}
 
       <Lightbox
         open={lightboxIndex >= 0}
