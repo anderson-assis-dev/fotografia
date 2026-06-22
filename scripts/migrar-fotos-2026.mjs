@@ -128,7 +128,7 @@ async function main() {
     { folder: RET, file: "_MG_5421.jpeg" },
     { folder: RET, file: "_MG_5446.jpeg" },
   ]);
-  await copyProject("gostosuras-do-mundo", [
+  await copyProject("casa-opera", [
     { folder: CAMP, file: "_MG_5984.jpeg" },
     { folder: CAMP, file: "_MG_6057.jpeg" },
     { folder: CAMP, file: "_MG_5933.jpeg" },
@@ -146,7 +146,7 @@ async function main() {
     { folder: REST, file: "IMG_3258.JPG" },
     { folder: REST, file: "IMG_3259.JPG" },
   ]);
-  await copyProject("raizen", [
+  await copyProject("sorveteria-da-ribeira", [
     { folder: CAPA, file: "_MG_8538-Editar.jpeg" },
   ]);
   await copyProject("coxa-coxinha", [

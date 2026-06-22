@@ -59,9 +59,9 @@ async function main() {
     "_MG_5626.jpeg",    // 08 – costas com chapéu e colar de cristal
   ], 1);
 
-  console.log("\n📂 raizen (+7 novas, 7 existentes → 14 total)");
-  await shiftPhotos("raizen", 7, 7);
-  await copyPhotos("raizen", [
+  console.log("\n📂 sorveteria-da-ribeira (+7 novas, 7 existentes → 14 total)");
+  await shiftPhotos("sorveteria-da-ribeira", 7, 7);
+  await copyPhotos("sorveteria-da-ribeira", [
     "_MG_8538-Editar.jpeg",  // 01 – sorvete pistache retrato (CAPA)
     "_MG_8515.jpeg",          // 02 – três casquinhas de pistache
     "_MG_8558.jpeg",          // 03 – casquinha em pé sobre pistaches
@@ -71,9 +71,9 @@ async function main() {
     "_MG_5605.jpeg",          // 07 – casquinha sobre morangos
   ], 1);
 
-  console.log("\n📂 gostosuras-do-mundo (+3 novas, 12 existentes → 15 total)");
-  await shiftPhotos("gostosuras-do-mundo", 12, 3);
-  await copyPhotos("gostosuras-do-mundo", [
+  console.log("\n📂 casa-opera (+3 novas, 12 existentes → 15 total)");
+  await shiftPhotos("casa-opera", 12, 3);
+  await copyPhotos("casa-opera", [
     "_MG_5984.jpeg",  // 01 – ovo POP com pipoca, laranja vibrante (CAPA)
     "_MG_6057.jpeg",  // 02 – Detetive Caça aos Ovos, fundo roxo
     "_MG_5933.jpeg",  // 03 – três cascas de ovos abertas
