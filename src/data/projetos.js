@@ -9,12 +9,16 @@ function capaDoProjeto(slug, numero = "01") {
   return `/projetos/${slug}/thumb/${numero}.webp`;
 }
 
+export function getProjetosVisiveis() {
+  return projetos.filter((p) => !p.oculto && !p.destaque);
+}
+
 export const projetos = [
   {
     id: 1,
     slug: "havanna",
     nome: "Havanna",
-    categoria: "produtos",
+    categoria: "embalagens",
     cliente: "Havanna",
     ano: 2024,
     local: "Salvador, BA",
@@ -28,6 +32,7 @@ export const projetos = [
     slug: "mali-burguer",
     nome: "Mali Burguer",
     categoria: "gastronomia",
+    oculto: true,
     cliente: "Mali Burguer",
     ano: 2024,
     local: "Salvador, BA",
@@ -39,13 +44,13 @@ export const projetos = [
   {
     id: 3,
     slug: "pharos",
-    nome: "Pharos",
+    nome: "Maar Acessórios",
     categoria: "retratos",
-    cliente: "Pharos",
+    cliente: "Maar Acessórios",
     ano: 2025,
     local: "Salvador, BA",
     resumo:
-      "Ensaio de retrato e lifestyle para a campanha da Pharos, com direção criativa que une still de joias e acessórios artesanais com cenas de consumo na orla de Salvador.",
+      "Ensaio de retrato e lifestyle para a campanha Pharos da Maar Acessórios, com direção criativa que une still de joias e acessórios artesanais com cenas de consumo na orla de Salvador.",
     capa: capaDoProjeto("pharos"),
     fotos: fotosDoProjeto("pharos", 15),
   },
@@ -67,6 +72,7 @@ export const projetos = [
     slug: "kammi",
     nome: "Kammi",
     categoria: "embalagens",
+    oculto: true,
     cliente: "Kammi",
     ano: 2024,
     local: "Salvador, BA",
@@ -93,6 +99,7 @@ export const projetos = [
     slug: "nemukta",
     nome: "Nemukta",
     categoria: "gastronomia",
+    oculto: true,
     cliente: "Nemukta",
     ano: 2024,
     local: "Salvador, BA",
@@ -119,6 +126,7 @@ export const projetos = [
     slug: "table-and-flowers",
     nome: "Table and Flowers",
     categoria: "produtos",
+    oculto: true,
     cliente: "Table and Flowers",
     ano: 2024,
     local: "Salvador, BA",
@@ -157,7 +165,8 @@ export const projetos = [
     id: 12,
     slug: "the-minimalist-candle",
     nome: "The Minimalist Candle",
-    categoria: "produtos",
+    categoria: "embalagens",
+    oculto: true,
     cliente: "The Minimalist Candle",
     ano: 2025,
     local: "Salvador, BA",
@@ -170,7 +179,7 @@ export const projetos = [
     id: 13,
     slug: "goodies",
     nome: "Goodies",
-    categoria: "gastronomia",
+    categoria: "embalagens",
     cliente: "Goodies",
     ano: 2025,
     local: "Salvador, BA",
@@ -183,7 +192,7 @@ export const projetos = [
     id: 14,
     slug: "latitude-13",
     nome: "Latitude 13°",
-    categoria: "gastronomia",
+    categoria: "embalagens",
     cliente: "Latitude 13°",
     ano: 2025,
     local: "Salvador, BA",
@@ -196,7 +205,7 @@ export const projetos = [
     id: 15,
     slug: "coxa-coxinha",
     nome: "Coxa Coxinha",
-    categoria: "gastronomia",
+    categoria: "embalagens",
     cliente: "Coxa Coxinha",
     ano: 2024,
     local: "Salvador, BA",
@@ -278,17 +287,19 @@ export function getProjetoPorSlug(slug) {
 }
 
 export function getProjetosPorCategoria(categoriaSlug) {
-  if (!categoriaSlug || categoriaSlug === "todos") return projetos;
-  return projetos.filter((p) => p.categoria === categoriaSlug);
+  const visiveis = getProjetosVisiveis();
+  if (!categoriaSlug || categoriaSlug === "todos") return visiveis;
+  return visiveis.filter((p) => p.categoria === categoriaSlug);
 }
 
 export function getProjetoAdjacente(slug, direcao) {
-  const index = projetos.findIndex((p) => p.slug === slug);
+  const visiveis = getProjetosVisiveis();
+  const index = visiveis.findIndex((p) => p.slug === slug);
   if (index === -1) return null;
-  const total = projetos.length;
+  const total = visiveis.length;
   const novoIndex =
     direcao === "proximo"
       ? (index + 1) % total
       : (index - 1 + total) % total;
-  return projetos[novoIndex];
+  return visiveis[novoIndex];
 }

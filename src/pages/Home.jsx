@@ -7,14 +7,19 @@ import Reveal from "../components/ui/Reveal";
 import ProjectCard from "../components/ui/ProjectCard";
 import CategoryNav from "../components/ui/CategoryNav";
 import LazyImage from "../components/ui/LazyImage";
-import { projetos } from "../data/projetos";
+import { getProjetosVisiveis, getProjetoPorSlug } from "../data/projetos";
 import { SITE } from "../data/site";
 
-const DESTAQUES = projetos.filter((p) => !p.destaque).slice(0, 8);
+const DESTAQUES = getProjetosVisiveis().slice(0, 8);
 
-const FOTOS_VITRINE = [1, 5, 10, 18, 28, 40].map(
-  (n) => `/projetos/melhores-trabalhos/thumb/${String(n).padStart(2, "0")}.webp`,
-);
+const FOTOS_VITRINE = [
+  "/projetos/latitude-13/thumb/01.webp",
+  "/projetos/havanna/thumb/01.webp",
+  "/projetos/pharos/thumb/01.webp",
+  "/projetos/bufalissima/thumb/01.webp",
+  "/projetos/gostosuras-do-mundo/thumb/01.webp",
+  "/projetos/integre/thumb/01.webp",
+];
 
 const SPANS = [
   "md:col-span-7",
@@ -35,6 +40,8 @@ export default function Home() {
   });
   const yBack = useTransform(scrollYProgress, [0, 1], [0, 80]);
   const yFront = useTransform(scrollYProgress, [0, 1], [0, -40]);
+  const capaHero = getProjetoPorSlug("bufalissima");
+  const capaHeroSec = getProjetoPorSlug("latitude-13");
 
   return (
     <>
@@ -51,12 +58,10 @@ export default function Home() {
               {SITE.tagline} · {SITE.local}
             </p>
             <h1 className="font-display text-5xl leading-[1.05] text-ink md:text-7xl">
-              Aiara Diniz
+              {SITE.nome}
             </h1>
             <p className="mt-6 max-w-md text-balance text-base text-graphite md:text-lg">
-              Imagens que vendem o detalhe: comida, produto e retrato com luz,
-              composição e direção de arte para marcas que querem ser
-              lembradas.
+              {SITE.descricao}
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
               <Link
@@ -78,16 +83,16 @@ export default function Home() {
           <div className="relative grid h-[420px] grid-cols-2 gap-4 md:h-[520px]">
             <motion.div style={{ y: yBack }} className="col-span-1 mt-10">
               <LazyImage
-                src={projetos[7].capa}
-                alt={`Still de produto do projeto ${projetos[7].nome}`}
+                src={capaHero.capa}
+                alt={`Still de produto do projeto ${capaHero.nome}`}
                 aspect="aspect-[3/4]"
                 eager
               />
             </motion.div>
             <motion.div style={{ y: yFront }} className="col-span-1 mt-0">
               <LazyImage
-                src={projetos[2].capa}
-                alt={`Retrato do projeto ${projetos[2].nome}`}
+                src={capaHeroSec.capa}
+                alt={`Still de produto do projeto ${capaHeroSec.nome}`}
                 aspect="aspect-[3/4]"
                 eager
               />
@@ -107,7 +112,7 @@ export default function Home() {
                 Melhores Trabalhos
               </h2>
               <p className="mt-3 max-w-xs text-sm text-cream/55">
-                Uma seleção das imagens mais marcantes do portfólio — produto, gastronomia e retratos com olhar editorial.
+                Uma seleção das imagens mais marcantes do portfólio — produtos, gastronomia e retratos com olhar autêntico.
               </p>
             </div>
             <Link
@@ -144,9 +149,17 @@ export default function Home() {
       <section className="px-6 py-20 md:px-10">
         <div className="mx-auto max-w-7xl">
           <Reveal className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-            <h2 className="font-display text-3xl text-ink md:text-4xl">
-              Trabalhos selecionados
-            </h2>
+            <div>
+              <p className="mb-3 text-xs uppercase tracking-wides text-terracotta">
+                Curadoria de projetos
+              </p>
+              <h2 className="font-display text-3xl text-ink md:text-4xl">
+                Marcas & Projetos
+              </h2>
+              <p className="mt-3 max-w-md text-sm text-graphite">
+                Desenvolvidos com estratégia, estética e intenção para comunicar marcas de forma autêntica.
+              </p>
+            </div>
             <Link
               to="/portfolio"
               className="inline-flex items-center gap-2 text-sm uppercase tracking-wides text-ink/70 hover:text-terracotta"
@@ -174,7 +187,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <Reveal>
             <p className="mb-6 text-xs uppercase tracking-wides text-graphite">
-              Especialidades
+              Áreas de Atuação
             </p>
           </Reveal>
           <Reveal delay={0.05}>
@@ -187,8 +200,8 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2">
           <Reveal>
             <LazyImage
-              src="/projetos/table-and-flowers/thumb/01.webp"
-              alt="Still editorial de produto fotografado por Aiara Diniz"
+              src="/sobre/03.webp"
+              alt="Aiara Diniz — fotógrafa e diretora criativa"
               aspect="aspect-[4/5]"
             />
           </Reveal>
@@ -197,12 +210,13 @@ export default function Home() {
               Sobre
             </p>
             <h2 className="font-display text-3xl leading-tight text-ink md:text-4xl">
-              Fotografia com direção de arte, da ideia ao still final.
+              Muito além da fotografia
             </h2>
             <p className="mt-6 max-w-lg text-graphite">
-              De Salvador para marcas em todo o Brasil. Co-fundadora da
-              RawHub, plataforma feita para fotógrafos. Atuo com gastronomia,
-              produtos, retratos e embalagens, sempre com um olhar editorial.
+              Cada projeto começa antes do clique final. Desenvolvo a direção criativa, pesquisa de referências, definição de cenários, composição, luz e narrativa visual para criar imagens que valorizam a marca e desperta desejo no olhar do consumidor.
+            </p>
+            <p className="mt-4 max-w-lg font-display text-lg text-ink">
+              O próximo projeto pode ser o seu.
             </p>
             <Link
               to="/sobre"

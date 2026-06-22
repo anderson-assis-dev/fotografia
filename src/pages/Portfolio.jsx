@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import SEO from "../components/ui/SEO";
 import Reveal from "../components/ui/Reveal";
 import ProjectCard from "../components/ui/ProjectCard";
-import { projetos } from "../data/projetos";
+import { getProjetosVisiveis } from "../data/projetos";
 import { categorias } from "../data/categorias";
 import { cn } from "../lib/utils";
 
@@ -15,8 +15,8 @@ export default function Portfolio() {
   const categoriaAtiva = searchParams.get("categoria") ?? "todos";
 
   const projetosFiltrados = useMemo(() => {
-    if (categoriaAtiva === "todos") return projetos;
-    return projetos.filter((p) => p.categoria === categoriaAtiva);
+    if (categoriaAtiva === "todos") return getProjetosVisiveis();
+    return getProjetosVisiveis().filter((p) => p.categoria === categoriaAtiva);
   }, [categoriaAtiva]);
 
   function selecionarCategoria(slug) {

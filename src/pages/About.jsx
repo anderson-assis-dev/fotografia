@@ -5,26 +5,31 @@ import Reveal from "../components/ui/Reveal";
 import LazyImage from "../components/ui/LazyImage";
 import { SITE } from "../data/site";
 
-const SERVICOS = [
+const AREAS = [
   {
     nome: "Gastronomia",
-    descricao: "Still life de cardápio, pratos e bebidas para restaurantes e marcas de alimentos.",
-  },
-  {
-    nome: "Produtos",
-    descricao: "Fotografia de still life para e-commerce, lançamentos e catálogos.",
-  },
-  {
-    nome: "Retratos",
-    descricao: "Ensaios de retrato e lifestyle para fundadores, equipes e campanhas.",
+    descricao:
+      "Fotografia para cardápios, iFood e redes sociais. Produção de imagens de bebidas, pratos e ambientes de restaurantes, além de registros da equipe e do dia a dia do estabelecimento. Também oferecemos ensaios humanizados para campanhas e datas comemorativas.",
   },
   {
     nome: "Embalagens",
-    descricao: "Still de embalagem com foco em rótulo, textura e identidade de marca.",
+    descricao:
+      "Fotografia still com foco total no produto, destacando forma, textura e detalhes. Imagens pensadas para aplicações em embalagens, campanhas publicitárias e comunicação visual da marca.",
   },
   {
-    nome: "Restaurantes",
-    descricao: "Cobertura de ambiente, equipe e experiência para casas gastronômicas.",
+    nome: "Produtos",
+    descricao:
+      "Fotografia para e-commerce, lançamentos e catálogos. Imagens estratégicas para redes sociais e vendas online, valorizando o produto de forma clara, comercial e atrativa.",
+  },
+  {
+    nome: "Retratos humanizados",
+    descricao:
+      "Ensaios voltados para profissionais e empreendedores que desejam fortalecer sua presença digital com imagens autênticas, que transmitem personalidade e conexão com o público.",
+  },
+  {
+    nome: "Foodstyling",
+    descricao:
+      "Preparação e composição de alimentos para fotografia, garantindo apresentação visual impecável em cada clique — do prato ao detalhe do ingrediente.",
   },
 ];
 
@@ -33,35 +38,19 @@ export default function About() {
     <>
       <SEO
         title="Sobre"
-        description="Conheça Aiara Diniz, fotógrafa e diretora criativa em Salvador, BA, co-fundadora da RawHub."
+        description="Conheça Aiara Diniz, fotógrafa publicitária e diretora criativa em Salvador, BA."
         path="/sobre"
       />
 
       <section className="px-6 pt-16 pb-20 md:px-10">
         <div className="mx-auto grid max-w-7xl items-start gap-14 md:grid-cols-2">
           <Reveal>
-            <div className="grid grid-cols-[3fr_2fr] gap-3">
-              <LazyImage
-                src="/sobre/01.webp"
-                alt="Aiara Diniz — fotógrafa e diretora criativa"
-                aspect="aspect-[2/3]"
-                eager
-              />
-              <div className="flex flex-col gap-3">
-                <LazyImage
-                  src="/sobre/02.webp"
-                  alt="Aiara Diniz em produção"
-                  aspect="aspect-[3/4]"
-                  eager
-                />
-                <LazyImage
-                  src="/sobre/03.webp"
-                  alt="Aiara Diniz — olhar editorial"
-                  aspect="aspect-[3/4]"
-                  eager
-                />
-              </div>
-            </div>
+            <LazyImage
+              src="/sobre/03.webp"
+              alt="Aiara Diniz — fotógrafa e diretora criativa"
+              aspect="aspect-[2/3]"
+              eager
+            />
           </Reveal>
 
           <Reveal delay={0.1}>
@@ -69,24 +58,20 @@ export default function About() {
               Sobre
             </p>
             <h1 className="font-display text-4xl text-ink md:text-5xl">
-              Aiara Diniz
+              Por trás das câmeras existe alguém apaixonada por criar.
             </h1>
             <div className="mt-6 space-y-4 text-balance text-ink/80">
               <p>
-                Fotógrafa e diretora criativa baseada em Salvador, Bahia, com
-                o olhar treinado para transformar comida, produto e marca em
-                imagem que vende. De Salvador para o Brasil — atendo clientes
-                remotamente e em viagem.
+                Sou Aiara Diniz, fotógrafa publicitária e diretora criativa. Meu trabalho nasceu da vontade de transformar ideias em imagens que geram conexão, despertam emoções e valorizam marcas.
               </p>
               <p>
-                Co-fundadora da <strong>RawHub</strong>, plataforma feita por
-                e para fotógrafos, nascida da vontade de organizar e
-                profissionalizar a rotina de quem vive de imagem.
+                Entre produções, cenários, luzes e muitas xícaras de café, encontrei na fotografia uma forma de contar histórias sem precisar de palavras.
               </p>
               <p>
-                Cada projeto passa por direção de arte antes da primeira
-                foto: referência, paleta, luz e composição pensadas para a
-                identidade de cada marca.
+                Hoje ajudo empresas, restaurantes, cafeterias e empreendedores a comunicarem seus produtos e serviços através de imagens pensadas estrategicamente, sempre com um olhar atento aos detalhes e à identidade de cada marca.
+              </p>
+              <p>
+                Acredito que criatividade, planejamento e sensibilidade caminham juntos. E é dessa combinação que surgem os projetos que mais gosto de criar.
               </p>
             </div>
 
@@ -105,15 +90,15 @@ export default function About() {
         <div className="mx-auto max-w-7xl">
           <Reveal>
             <h2 className="font-display text-3xl text-ink md:text-4xl">
-              Serviços
+              Áreas
             </h2>
           </Reveal>
 
           <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
-            {SERVICOS.map((servico, index) => (
-              <Reveal key={servico.nome} delay={(index % 3) * 0.05}>
-                <h3 className="font-display text-xl text-ink">{servico.nome}</h3>
-                <p className="mt-2 text-sm text-graphite">{servico.descricao}</p>
+            {AREAS.map((area, index) => (
+              <Reveal key={area.nome} delay={(index % 3) * 0.05}>
+                <h3 className="font-display text-xl text-ink">{area.nome}</h3>
+                <p className="mt-2 text-sm text-graphite">{area.descricao}</p>
               </Reveal>
             ))}
           </div>
