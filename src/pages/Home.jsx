@@ -7,19 +7,14 @@ import Reveal from "../components/ui/Reveal";
 import ProjectCard from "../components/ui/ProjectCard";
 import CategoryNav from "../components/ui/CategoryNav";
 import LazyImage from "../components/ui/LazyImage";
-import { getProjetosVisiveis, getProjetoPorSlug } from "../data/projetos";
+import { getProjetosVisiveis } from "../data/projetos";
 import { SITE } from "../data/site";
 
 const DESTAQUES = getProjetosVisiveis().slice(0, 8);
 
-const FOTOS_VITRINE = [
-  "/projetos/latitude-13/thumb/01.webp",
-  "/projetos/havanna/thumb/01.webp",
-  "/projetos/pharos/thumb/01.webp",
-  "/projetos/bufalissima/thumb/01.webp",
-  "/projetos/gostosuras-do-mundo/thumb/01.webp",
-  "/projetos/integre/thumb/01.webp",
-];
+const FOTOS_VITRINE = [1, 2, 3, 4, 5, 6].map(
+  (n) => `/projetos/melhores-trabalhos/thumb/${String(n).padStart(2, "0")}.webp`,
+);
 
 const SPANS = [
   "md:col-span-7",
@@ -40,8 +35,6 @@ export default function Home() {
   });
   const yBack = useTransform(scrollYProgress, [0, 1], [0, 80]);
   const yFront = useTransform(scrollYProgress, [0, 1], [0, -40]);
-  const capaHero = getProjetoPorSlug("bufalissima");
-  const capaHeroSec = getProjetoPorSlug("latitude-13");
 
   return (
     <>
@@ -83,16 +76,16 @@ export default function Home() {
           <div className="relative grid h-[420px] grid-cols-2 gap-4 md:h-[520px]">
             <motion.div style={{ y: yBack }} className="col-span-1 mt-10">
               <LazyImage
-                src={capaHero.capa}
-                alt={`Still de produto do projeto ${capaHero.nome}`}
+                src="/hero/01.webp"
+                alt="Campanha McDonald's — fotografia publicitária por Aiara Diniz"
                 aspect="aspect-[3/4]"
                 eager
               />
             </motion.div>
             <motion.div style={{ y: yFront }} className="col-span-1 mt-0">
               <LazyImage
-                src={capaHeroSec.capa}
-                alt={`Still de produto do projeto ${capaHeroSec.nome}`}
+                src="/hero/02.webp"
+                alt="Still de café Latitude 13° — fotografia de produto por Aiara Diniz"
                 aspect="aspect-[3/4]"
                 eager
               />
@@ -106,13 +99,13 @@ export default function Home() {
           <Reveal className="mb-10 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div>
               <p className="mb-3 text-xs uppercase tracking-wides text-terracotta">
-                Galeria curada
+                Curadoria de projetos
               </p>
               <h2 className="font-display text-3xl text-cream md:text-4xl">
-                Melhores Trabalhos
+                Portfólio
               </h2>
               <p className="mt-3 max-w-xs text-sm text-cream/55">
-                Uma seleção das imagens mais marcantes do portfólio — produtos, gastronomia e retratos com olhar autêntico.
+                Desenvolvidos com estratégia, estética e intenção para comunicar marcas de forma autêntica.
               </p>
             </div>
             <Link

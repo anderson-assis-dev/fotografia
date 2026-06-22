@@ -52,13 +52,14 @@ export const projetos = [
     resumo:
       "Ensaio de retrato e lifestyle para a campanha Pharos da Maar Acessórios, com direção criativa que une still de joias e acessórios artesanais com cenas de consumo na orla de Salvador.",
     capa: capaDoProjeto("pharos"),
-    fotos: fotosDoProjeto("pharos", 15),
+    fotos: fotosDoProjeto("pharos", 10),
   },
   {
     id: 4,
     slug: "sora",
     nome: "Sora",
     categoria: "gastronomia",
+    oculto: true,
     cliente: "Sora",
     ano: 2025,
     local: "Salvador, BA",
@@ -92,7 +93,7 @@ export const projetos = [
     resumo:
       "Fotografia gastronômica para o Intégré, espaço de gastronomia contemporânea em Salvador, com registros que vão de pratos autorais e carta de vinhos criteriosamente selecionada à confeitaria artesanal da casa.",
     capa: capaDoProjeto("integre"),
-    fotos: fotosDoProjeto("integre", 15),
+    fotos: fotosDoProjeto("integre", 6),
   },
   {
     id: 7,
@@ -119,7 +120,7 @@ export const projetos = [
     resumo:
       "Direção de imagem e still de produto para a Fulora, floricultura de Salvador, unindo still de buquês embalados com cenas lifestyle de entrega e uso real do produto.",
     capa: capaDoProjeto("fulora"),
-    fotos: fotosDoProjeto("fulora", 12),
+    fotos: fotosDoProjeto("fulora", 6),
   },
   {
     id: 9,
@@ -146,7 +147,7 @@ export const projetos = [
     resumo:
       "Still life gastronômico para a Gostosuras do Mundo, com composição editorial vibrante de ovos de Páscoa recheados, brigadeiros e doces artesanais em cenários coloridos e cheios de energia.",
     capa: capaDoProjeto("gostosuras-do-mundo"),
-    fotos: fotosDoProjeto("gostosuras-do-mundo", 15),
+    fotos: fotosDoProjeto("gostosuras-do-mundo", 8),
   },
   {
     id: 11,
@@ -159,7 +160,7 @@ export const projetos = [
     resumo:
       "Still life gastronômico para a linha de sorvetes e açaí da Raizen, com cenários naturais e frutas frescas — do pistache ao morango — para reforçar a sensação de frescor do produto.",
     capa: capaDoProjeto("raizen"),
-    fotos: fotosDoProjeto("raizen", 14),
+    fotos: fotosDoProjeto("raizen", 1),
   },
   {
     id: 12,
@@ -186,7 +187,7 @@ export const projetos = [
     resumo:
       "Fotografia de produto para a linha de doces fit da Goodies, com composição vibrante destacando brigadeiros de colher e mousses sem lactose da linha by Nutrimia.",
     capa: capaDoProjeto("goodies"),
-    fotos: fotosDoProjeto("goodies", 2),
+    fotos: fotosDoProjeto("goodies", 1),
   },
   {
     id: 14,
@@ -212,7 +213,7 @@ export const projetos = [
     resumo:
       "Still life gastronômico para a Coxa Coxinha, capturando a identidade colorida e descontraída da marca em composições com coxinhas, brigadeiros e embalagens icônicas.",
     capa: capaDoProjeto("coxa-coxinha"),
-    fotos: fotosDoProjeto("coxa-coxinha", 2),
+    fotos: fotosDoProjeto("coxa-coxinha", 1),
   },
   {
     id: 16,
@@ -278,7 +279,7 @@ export const projetos = [
     resumo:
       "Uma seleção curada das fotografias mais marcantes do portfólio: gastronomia, still life de produto, embalagens e retratos que definem o olhar editorial de Aiara Diniz.",
     capa: capaDoProjeto("melhores-trabalhos"),
-    fotos: fotosDoProjeto("melhores-trabalhos", 46),
+    fotos: fotosDoProjeto("melhores-trabalhos", 18),
   },
 ];
 
