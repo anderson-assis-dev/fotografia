@@ -11,7 +11,8 @@
     "thumbs": "node scripts/gerar-thumbs.mjs",
     "retratos": "node scripts/sincronizar-retratos.mjs",
     "embalagens": "node scripts/sincronizar-embalagens.mjs",
-    "foodstyling": "node scripts/sincronizar-foodstyling.mjs"
+    "foodstyling": "node scripts/sincronizar-foodstyling.mjs",
+    "produtos": "node scripts/sincronizar-produtos.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.40.0",

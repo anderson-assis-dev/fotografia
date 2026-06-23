@@ -11,6 +11,7 @@ import { getProjetosVisiveis } from "../data/projetos";
 import { fotosRetratos } from "../data/retratos";
 import { fotosEmbalagens } from "../data/embalagens";
 import { fotosFoodstyling } from "../data/foodstyling";
+import { fotosProdutos } from "../data/produtos";
 import { categorias } from "../data/categorias";
 import { cn } from "../lib/utils";
 
@@ -20,6 +21,7 @@ const GALERIAS = {
   retratos: { fotos: fotosRetratos, titulo: "Retratos", rotulo: "retrato" },
   embalagens: { fotos: fotosEmbalagens, titulo: "Embalagens", rotulo: "embalagem" },
   foodstyling: { fotos: fotosFoodstyling, titulo: "Foodstyling", rotulo: "foodstyling" },
+  produtos: { fotos: fotosProdutos, titulo: "Produtos", rotulo: "produto" },
 };
 
 function thumbGaleria(src) {
