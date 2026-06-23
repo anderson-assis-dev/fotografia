@@ -97,7 +97,7 @@ export const projetos = [
     resumo:
       "Fotografia gastronômica para o DI Giussepe, espaço de gastronomia contemporânea em Salvador, com registros que vão de pratos autorais e carta de vinhos criteriosamente selecionada à confeitaria artesanal da casa.",
     capa: capaDoProjeto("di-giussepe"),
-    fotos: fotosDoProjeto("di-giussepe", 5),
+    fotos: fotosDoProjeto("di-giussepe", 3),
   },
   {
     id: 7,
