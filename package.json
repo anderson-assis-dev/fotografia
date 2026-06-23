@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "thumbs": "node scripts/gerar-thumbs.mjs",
     "retratos": "node scripts/sincronizar-retratos.mjs",
-    "embalagens": "node scripts/sincronizar-embalagens.mjs"
+    "embalagens": "node scripts/sincronizar-embalagens.mjs",
+    "foodstyling": "node scripts/sincronizar-foodstyling.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.40.0",
