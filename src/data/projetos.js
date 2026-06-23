@@ -127,19 +127,6 @@ export const projetos = [
     fotos: fotosDoProjeto("fulora", 4),
   },
   {
-    id: 21,
-    slug: "fulora-retratos",
-    nome: "Fulora",
-    categoria: "retratos",
-    cliente: "Fulora",
-    ano: 2025,
-    local: "Salvador, BA",
-    resumo:
-      "Ensaio de retrato lifestyle para a Fulora, floricultura de Salvador, com direção criativa que celebra a entrega de flores, a relação afetiva com o buquê e composições editoriais em estúdio.",
-    capa: capaDoProjeto("fulora-retratos"),
-    fotos: fotosDoProjeto("fulora-retratos", 5),
-  },
-  {
     id: 9,
     slug: "table-and-flowers",
     nome: "Table and Flowers",

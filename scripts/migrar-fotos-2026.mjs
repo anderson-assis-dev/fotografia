@@ -83,13 +83,6 @@ async function main() {
     { folder: PRODUTO, file: "ea47d31e-04dc-407a-9a38-5c32ebdc5f5c.jpg" },
     { folder: PRODUTO, file: "35601f3c-7aa3-4a34-a053-a65537cff414.jpg" },
   ];
-  const fuloraRetratosItems = [
-    { folder: RET, file: "_MG_5319-Editar.jpeg" },
-    { folder: RET, file: "_MG_5508-Aprimorado-NR.jpeg" },
-    { folder: RET, file: "_MG_5380.jpeg" },
-    { folder: RET, file: "_MG_5421.jpeg" },
-    { folder: RET, file: "_MG_5446.jpeg" },
-  ];
   if (fs.existsSync(fuloraBouquet)) {
     fs.copyFileSync(fuloraBouquet, tempBouquet);
   }
@@ -108,9 +101,6 @@ async function main() {
     await processImage(srcPath(folder, file), path.join(dir, `${num}.jpg`));
     console.log(`  fulora/${num}.jpg ← ${file}`);
   }
-
-  console.log("\n📸 Fulora Retratos");
-  await copyProject("fulora-retratos", fuloraRetratosItems);
 
   console.log("\n📸 Projetos");
   await copyProject("latitude-13", [

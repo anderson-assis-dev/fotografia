@@ -8,7 +8,9 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "thumbs": "node scripts/gerar-thumbs.mjs"
+    "thumbs": "node scripts/gerar-thumbs.mjs",
+    "retratos": "node scripts/sincronizar-retratos.mjs",
+    "embalagens": "node scripts/sincronizar-embalagens.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.40.0",

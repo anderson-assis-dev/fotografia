@@ -1,0 +1,20 @@
+export const fotosRetratos = [
+  "/fotos-retratos/full/01.jpg",
+  "/fotos-retratos/full/02.jpg",
+  "/fotos-retratos/full/03.jpg",
+  "/fotos-retratos/full/04.jpg",
+  "/fotos-retratos/full/05.jpg",
+  "/fotos-retratos/full/06.jpg",
+  "/fotos-retratos/full/07.jpg",
+  "/fotos-retratos/full/08.jpg",
+  "/fotos-retratos/full/09.jpg",
+  "/fotos-retratos/full/10.jpg",
+  "/fotos-retratos/full/11.jpg",
+  "/fotos-retratos/full/12.jpg",
+  "/fotos-retratos/full/13.jpg",
+  "/fotos-retratos/full/14.jpg",
+  "/fotos-retratos/full/15.jpg",
+  "/fotos-retratos/full/16.jpg",
+  "/fotos-retratos/full/17.jpg",
+  "/fotos-retratos/full/18.jpg"
+];
