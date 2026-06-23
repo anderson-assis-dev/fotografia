@@ -12,16 +12,16 @@ import { fotosRetratos } from "../data/retratos";
 import { fotosEmbalagens } from "../data/embalagens";
 import { fotosFoodstyling } from "../data/foodstyling";
 import { fotosProdutos } from "../data/produtos";
-import { categorias } from "../data/categorias";
+import { categorias, descricaoCategoria, tituloCategoria } from "../data/categorias";
 import { cn } from "../lib/utils";
 
 const FILTROS = [{ slug: "todos", rotulo: "Todos" }, ...categorias];
 
 const GALERIAS = {
-  retratos: { fotos: fotosRetratos, titulo: "Retratos", rotulo: "retrato" },
-  embalagens: { fotos: fotosEmbalagens, titulo: "Embalagens", rotulo: "embalagem" },
-  foodstyling: { fotos: fotosFoodstyling, titulo: "Foodstyling", rotulo: "foodstyling" },
-  produtos: { fotos: fotosProdutos, titulo: "Produtos", rotulo: "produto" },
+  retratos: { fotos: fotosRetratos, rotulo: "retrato" },
+  embalagens: { fotos: fotosEmbalagens, rotulo: "embalagem" },
+  foodstyling: { fotos: fotosFoodstyling, rotulo: "foodstyling" },
+  produtos: { fotos: fotosProdutos, rotulo: "produto" },
 };
 
 function thumbGaleria(src) {
@@ -33,6 +33,10 @@ export default function Portfolio() {
   const categoriaAtiva = searchParams.get("categoria") ?? "todos";
   const [lightboxIndex, setLightboxIndex] = useState(-1);
   const galeria = GALERIAS[categoriaAtiva];
+  const tituloPagina =
+    categoriaAtiva === "todos" ? "Projetos" : tituloCategoria(categoriaAtiva);
+  const descricaoPagina =
+    categoriaAtiva === "todos" ? null : descricaoCategoria(categoriaAtiva);
 
   const projetosFiltrados = useMemo(() => {
     if (categoriaAtiva === "todos") return getProjetosVisiveis();
@@ -57,8 +61,11 @@ export default function Portfolio() {
   return (
     <>
       <SEO
-        title={galeria ? galeria.titulo : "Portfólio"}
-        description="Veja os projetos de fotografia de Aiara Diniz: gastronomia, produtos, retratos e embalagens."
+        title={categoriaAtiva === "todos" ? "Portfólio" : tituloPagina}
+        description={
+          descricaoPagina ??
+          "Veja os projetos de fotografia de Aiara Diniz: gastronomia, produtos, retratos e embalagens."
+        }
         path="/portfolio"
       />
 
@@ -69,8 +76,13 @@ export default function Portfolio() {
               Portfólio
             </p>
             <h1 className="font-display text-4xl text-ink md:text-5xl">
-              {galeria ? galeria.titulo : "Projetos"}
+              {tituloPagina}
             </h1>
+            {descricaoPagina && (
+              <p className="mt-5 max-w-2xl text-balance text-base text-graphite md:text-lg">
+                {descricaoPagina}
+              </p>
+            )}
           </Reveal>
 
           <Reveal delay={0.1}>
@@ -129,7 +141,7 @@ export default function Portfolio() {
                       >
                         <LazyImage
                           src={thumbGaleria(src)}
-                          alt={`${galeria.titulo} ${i + 1} — Aiara Diniz`}
+                          alt={`${tituloPagina} ${i + 1} — Aiara Diniz`}
                           aspect="aspect-[3/4]"
                           imgClassName="transition-transform duration-600 ease-out-soft group-hover:scale-[1.04]"
                         />

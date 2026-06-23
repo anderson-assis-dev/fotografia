@@ -57,7 +57,8 @@ export default function Contact() {
               Contato
             </p>
             <h1 className="font-display text-4xl text-ink md:text-5xl">
-              Vamos conversar sobre o seu projeto
+              Vamos transformar sua ideia em imagem.
+
             </h1>
             <p className="mt-6 max-w-md text-graphite">
               Preencha os campos abaixo e escolha enviar por WhatsApp ou
