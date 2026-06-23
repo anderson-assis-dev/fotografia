@@ -127,8 +127,8 @@ async function main() {
     { folder: PRODUTO, file: "IMG_9352-2.jpeg" },
     { folder: PRODUTO, file: "IMG_9373.jpeg" },
     { folder: PRODUTO, file: "IMG_9488_1.jpeg" },
-    { folder: RET, file: "_MG_5312-2.jpeg" },
-    { folder: RET, file: "_MG_5331.jpeg" },
+  ]);
+  await copyProject("pharos-retratos", [
     { folder: RET, file: "_MG_5380.jpeg" },
     { folder: RET, file: "_MG_5421.jpeg" },
     { folder: RET, file: "_MG_5446.jpeg" },
