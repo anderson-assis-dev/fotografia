@@ -29,7 +29,7 @@ export const projetos = [
     resumo:
       "Still life e fotografia de ambientação para o lançamento da linha de cafés especiais e chocolates da Havanna, destacando embalagem, textura e identidade da marca diretamente nas gôndolas da loja.",
     capa: capaDoProjeto("havanna"),
-    fotos: fotosDoProjeto("havanna", 12),
+    fotos: fotosDoProjeto("havanna", 11),
   },
   {
     id: 2,
@@ -97,7 +97,7 @@ export const projetos = [
     resumo:
       "Fotografia gastronômica para o DI Giussepe, espaço de gastronomia contemporânea em Salvador, com registros que vão de pratos autorais e carta de vinhos criteriosamente selecionada à confeitaria artesanal da casa.",
     capa: capaDoProjeto("di-giussepe"),
-    fotos: fotosDoProjeto("di-giussepe", 6),
+    fotos: fotosDoProjeto("di-giussepe", 5),
   },
   {
     id: 7,
@@ -164,7 +164,7 @@ export const projetos = [
     resumo:
       "Still life gastronômico para a linha de Páscoa da Casa Opera, com ovos recheados, brigadeiros e doces artesanais em composições editoriais coloridas que destacam o artesanato da confeitaria.",
     capa: capaDoProjeto("casa-opera"),
-    fotos: fotosDoProjeto("casa-opera", 8),
+    fotos: fotosDoProjeto("casa-opera", 7),
   },
   {
     id: 11,
