@@ -122,9 +122,22 @@ export const projetos = [
     ano: 2025,
     local: "Salvador, BA",
     resumo:
-      "Direção de imagem e still de produto para a Fulora, floricultura de Salvador, unindo still de buquês embalados com cenas lifestyle de entrega e uso real do produto.",
+      "Direção de imagem e still de produto para a Fulora, floricultura de Salvador, com buquês embalados, detalhes florais e composições editoriais para e-commerce e redes sociais.",
     capa: capaDoProjeto("fulora"),
-    fotos: fotosDoProjeto("fulora", 6),
+    fotos: fotosDoProjeto("fulora", 4),
+  },
+  {
+    id: 21,
+    slug: "fulora-retratos",
+    nome: "Fulora",
+    categoria: "retratos",
+    cliente: "Fulora",
+    ano: 2025,
+    local: "Salvador, BA",
+    resumo:
+      "Ensaio de retrato lifestyle para a Fulora, floricultura de Salvador, com direção criativa que celebra a entrega de flores e a relação afetiva com o buquê.",
+    capa: capaDoProjeto("fulora-retratos"),
+    fotos: fotosDoProjeto("fulora-retratos", 2),
   },
   {
     id: 9,
