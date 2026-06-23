@@ -59,19 +59,6 @@ export const projetos = [
     fotos: fotosDoProjeto("pharos", 5),
   },
   {
-    id: 22,
-    slug: "pharos-retratos",
-    nome: "Maar Acessórios",
-    categoria: "retratos",
-    cliente: "Maar Acessórios",
-    ano: 2025,
-    local: "Salvador, BA",
-    resumo:
-      "Retratos editoriais com flores para a campanha Pharos da Maar Acessórios, explorando leveza, feminilidade e composição em estúdio.",
-    capa: capaDoProjeto("pharos-retratos"),
-    fotos: fotosDoProjeto("pharos-retratos", 3),
-  },
-  {
     id: 4,
     slug: "sora",
     nome: "Sora",
@@ -148,9 +135,9 @@ export const projetos = [
     ano: 2025,
     local: "Salvador, BA",
     resumo:
-      "Ensaio de retrato lifestyle para a Fulora, floricultura de Salvador, com direção criativa que celebra a entrega de flores e a relação afetiva com o buquê.",
+      "Ensaio de retrato lifestyle para a Fulora, floricultura de Salvador, com direção criativa que celebra a entrega de flores, a relação afetiva com o buquê e composições editoriais em estúdio.",
     capa: capaDoProjeto("fulora-retratos"),
-    fotos: fotosDoProjeto("fulora-retratos", 2),
+    fotos: fotosDoProjeto("fulora-retratos", 5),
   },
   {
     id: 9,

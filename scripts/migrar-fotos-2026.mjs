@@ -86,6 +86,9 @@ async function main() {
   const fuloraRetratosItems = [
     { folder: RET, file: "_MG_5319-Editar.jpeg" },
     { folder: RET, file: "_MG_5508-Aprimorado-NR.jpeg" },
+    { folder: RET, file: "_MG_5380.jpeg" },
+    { folder: RET, file: "_MG_5421.jpeg" },
+    { folder: RET, file: "_MG_5446.jpeg" },
   ];
   if (fs.existsSync(fuloraBouquet)) {
     fs.copyFileSync(fuloraBouquet, tempBouquet);
@@ -127,11 +130,6 @@ async function main() {
     { folder: PRODUTO, file: "IMG_9352-2.jpeg" },
     { folder: PRODUTO, file: "IMG_9373.jpeg" },
     { folder: PRODUTO, file: "IMG_9488_1.jpeg" },
-  ]);
-  await copyProject("pharos-retratos", [
-    { folder: RET, file: "_MG_5380.jpeg" },
-    { folder: RET, file: "_MG_5421.jpeg" },
-    { folder: RET, file: "_MG_5446.jpeg" },
   ]);
   await copyProject("casa-opera", [
     { folder: CAMP, file: "_MG_5984.jpeg" },
