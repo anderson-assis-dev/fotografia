@@ -162,9 +162,9 @@ export const projetos = [
     ano: 2025,
     local: "Salvador, BA",
     resumo:
-      "Still life gastronômico para a linha de sorvetes e açaí da Sorveteria da Ribeira, com cenários naturais e frutas frescas — do pistache ao morango — para reforçar a sensação de frescor do produto.",
+      "Fotografia gastronômica para a Sorveteria da Ribeira, tradicional sorveteria soteropolitana desde 1931, com still de sorvetes, casquinhas e a caixa térmica icônica da marca em cenários naturais e frutas frescas.",
     capa: capaDoProjeto("sorveteria-da-ribeira"),
-    fotos: fotosDoProjeto("sorveteria-da-ribeira", 1),
+    fotos: fotosDoProjeto("sorveteria-da-ribeira", 6),
   },
   {
     id: 12,
@@ -231,19 +231,6 @@ export const projetos = [
       "Fotografia de produto em ambiente natural para a Bufalíssima, linha de queijos de búfala artesanais, reforçando o vínculo com a terra e a produção cuidadosa da marca.",
     capa: capaDoProjeto("bufalissima"),
     fotos: fotosDoProjeto("bufalissima", 2),
-  },
-  {
-    id: 17,
-    slug: "sorveteria-da-ribeira",
-    nome: "Sorveteria da Ribeira",
-    categoria: "gastronomia",
-    cliente: "Sorveteria da Ribeira",
-    ano: 2024,
-    local: "Salvador, BA",
-    resumo:
-      "Fotografia para a Sorveteria da Ribeira, tradicional sorveteria soteropolitana desde 1931, valorizando a paleta de sabores e a caixa térmica icônica da marca.",
-    capa: capaDoProjeto("sorveteria-da-ribeira"),
-    fotos: fotosDoProjeto("sorveteria-da-ribeira", 1),
   },
   {
     id: 18,
