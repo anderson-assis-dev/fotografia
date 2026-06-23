@@ -141,7 +141,7 @@ async function main() {
     { folder: CAMP, file: "_MG_4163.JPG" },
     { folder: CAMP, file: "29e43030-de22-471b-bde8-42de4c621a1e.jpg" },
   ]);
-  await copyProject("integre", [
+  await copyProject("di-giussepe", [
     { folder: REST, file: "_MG_2116.jpeg" },
     { folder: REST, file: "_MG_2220.jpeg" },
     { folder: REST, file: "_MG_9814-2-2.jpeg" },
